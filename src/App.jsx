@@ -1,5 +1,6 @@
 
 import './App.css'
+import LoverHeader from './components/reuseblecomponent/header/loverheader/LoverHeader'
 import Upperheader from './components/reuseblecomponent/header/upperheader/Upperheader'
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
   return (
    <>
    <Upperheader/>
-   <h1 className='text-center bg-lime-400 uppercase p-3 font-bold text-white'>telwind is working or not</h1>
+   <LoverHeader/>
+  
    </>
   )
 }
