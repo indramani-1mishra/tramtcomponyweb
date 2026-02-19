@@ -1,17 +1,19 @@
 
 import './App.css'
-import LoverHeader from './components/reuseblecomponent/header/loverheader/LoverHeader'
-import Upperheader from './components/reuseblecomponent/header/upperheader/Upperheader'
+
+
+import Router from './components/routes/Routes'
+import ScrollToTop from './components/ScrolltotOP/ScrollToTop'
 
 function App() {
 
 
   return (
    <>
-   <Upperheader/>
-   <LoverHeader/>
-  
+   <ScrollToTop/>
+   <Router/>
    </>
+
   )
 }
 
