@@ -23,7 +23,7 @@ export default function Footer() {
         <Link
           to="/contact"
           className="inline-flex items-center gap-2 text-white font-semibold px-6 py-3 rounded transition-opacity duration-200 hover:opacity-85"
-          style={{ backgroundColor: '#e8540a', fontSize: '15px' }}
+          style={{ backgroundColor: '#1e4d8c', fontSize: '15px' }}
         >
           <MdMail className="text-[18px]" />
           Contact Us
@@ -102,7 +102,7 @@ export default function Footer() {
         {/* ── Contact Us ── */}
         <div>
           <h3
-            className="text-white font-bold mb-5"
+            className="text-white font-bold mb-5 "
             style={{ fontSize: '16px' }}
           >
             Contact Us

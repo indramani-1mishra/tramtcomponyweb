@@ -40,7 +40,7 @@ export default function Allclient() {
   return (
     <div className='flex gap-3 flex-wrap bg-gray-400  items-center justify-evenly md:h-[80vh]'>
       {clients.map((image)=>{
-        return <img src={image} alt={image} loading='lazy' className='h-[100px] w-[160px] border-3 border-amber-300  shadow-md cursor-pointer'/>
+        return <img src={image} alt={image} loading='lazy' className='h-[100px] w-[160px] border-3 border-#1e4d8c shadow-md cursor-pointer'/>
       })}
     </div>
   )

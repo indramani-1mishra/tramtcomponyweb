@@ -1,56 +1,70 @@
-import React, { useState } from 'react';
-import { FaCheck } from 'react-icons/fa';
+import React, { useState } from 'react'
+import { FaCheck } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom';
 
 const offers = [
   {
     id: 1,
-    title: 'Performance Marketing',
+    title: 'Political & Public Image PR',
+    url:"/PoliticalPublicImagePR",
     points: [
-      'Custom-built, responsive websites tailored to your brand.',
-      'E-commerce solutions for seamless online shopping experiences.',
-      'Website maintenance and support for ongoing optimization.',
-      'Integration of user-friendly Content Management Systems (CMS).',
-      'Cost: Started From 50000+gst',
+      ' Image Positioning Strategy.',
+      'Media Coverage & Press Management.',
+      'Speech & Public Statement Drafting.',
+      'Reputation Monitoring & Protection.',
+      'Crisis Communication Support',
+      'Campaign Visibility Enhancement',
+      'Social & Digital Image Management',
     ],
   },
   {
     id: 2,
-    title: 'Dedicated Marketing',
+    title: 'Award Nomination & Recognition PR',
+    url:"/AwardNominationRecognitionPR",
     points: [
-      'Custom-built, responsive websites tailored to your brand.',
-      'E-commerce solutions for seamless online shopping experiences.',
-      'Website maintenance and support for ongoing optimization.',
-      'Integration of user-friendly Content Management Systems (CMS).',
-      'Cost: Started From 50000+gst',
+      'Award Research & Shortlisting',
+      ' Strategic Nomination Positioning',
+      'Professional Nomination Drafting.',
+      'Supporting Documentation Preparation.',
+      'Jury Communication & Submission Management',
+      
     ],
   },
   {
     id: 3,
-    title: 'Social Media Management',
+    title: 'Event PR & Media Coverage',
+    url:"/EventPRMediaCoverage",
     points: [
-      'Custom-built, responsive websites tailored to your brand.',
-      'E-commerce solutions for seamless online shopping experiences.',
-      'Website maintenance and support for ongoing optimization.',
-      'Integration of user-friendly Content Management Systems (CMS).',
-      'Cost: Started From 50000+gst',
+      'Pre-Event Buzz Creation',
+      ' Media Invitations & Coordination',
+      'On-Ground Media Management',
+      'IPost-Event Press Release Distribution',
+      ' Photo & Video Media Distribution',
+      ' Digital Amplification'
     ],
   },
   {
     id: 4,
-    title: 'PR Agency',
+    title: 'Startup PR Launch Packages',
+    url:"/StartupPRLaunchPackages",
     points: [
-      'Custom-built, responsive websites tailored to your brand.',
-      'E-commerce solutions for seamless online shopping experiences.',
-      'Website maintenance and support for ongoing optimization.',
-      'Integration of user-friendly Content Management Systems (CMS).',
-      'Cost: Started From 40000+gst',
+      'Startup Launch Announcement',
+      'National & Digital Media Coverage',
+      'Founder & Leadership Profiling',
+      ' Funding & Milestone PR',
+      'Influencer & Digital Amplification',
     ],
   },
-];
+]
 
 export default function WhatWeOffer() {
-  const [activeId, setActiveId] = useState(null); // Dedicated Marketing active by default
-
+  const [activeId, setActiveId] = useState(null);
+  const navigate = useNavigate();
+   const onclickhandler = (item)=>{
+    setActiveId(item.id);
+    navigate(item.url);
+    
+   }
   return (
     <section
       className="w-full py-12 px-4 bg-white"
@@ -59,7 +73,10 @@ export default function WhatWeOffer() {
       {/* ── Section Title ── */}
       <h2
         className="text-center font-bold mb-10"
-        style={{ fontSize: 'clamp(24px, 3vw, 36px)', color: '#1a1a1a' }}
+        style={{
+          fontSize: 'clamp(24px, 3vw, 36px)',
+          color: '#1a1a1a',
+        }}
       >
         What We Offer
       </h2>
@@ -67,25 +84,28 @@ export default function WhatWeOffer() {
       {/* ── Cards Grid ── */}
       <div className="max-w-[1300px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {offers.map((item) => {
-          const isActive = activeId === item.id;
+          const isActive = activeId === item.id
+
           return (
             <div
               key={item.id}
-              onClick={() => setActiveId(item.id)}
+              
+              onClick={() => onclickhandler(item)}
+              onMouseEnter={() => setActiveId(item.id)}
+              onMouseLeave={() => setActiveId(null)}
               className="rounded-sm cursor-pointer transition-all duration-300 flex flex-col py-8 px-6"
               style={{
-                backgroundColor: isActive ? '#e8540a' : '#1e1e1e',
+                backgroundColor: isActive ? '#1e4d8c' : '#1e1e1e',
               }}
-              onMouseEnter={()=>setActiveId(item.id)}
-              onmouseleave={()=>setActiveId(null)}
-              
             >
               {/* Card Title */}
               <h3
                 className="text-white text-center font-semibold mb-4 pb-3"
                 style={{
                   fontSize: 'clamp(15px, 1.4vw, 18px)',
-                  borderBottom: `2px solid ${isActive ? 'rgba(255,255,255,0.6)' : '#555'}`,
+                  borderBottom: `2px solid ${
+                    isActive ? 'rgba(255,255,255,0.6)' : '#555'
+                  }`,
                 }}
               >
                 {item.title}
@@ -98,13 +118,15 @@ export default function WhatWeOffer() {
                     <FaCheck
                       className="flex-shrink-0 mt-[3px]"
                       style={{
-                        color: isActive ? '#fff' : '#e8540a',
+                        color: isActive ? '#fff' : '#1e4d8c',
                         fontSize: '13px',
                       }}
                     />
                     <span
                       className="text-white leading-snug"
-                      style={{ fontSize: 'clamp(12px, 1.1vw, 14px)' }}
+                      style={{
+                        fontSize: 'clamp(12px, 1.1vw, 14px)',
+                      }}
                     >
                       {point}
                     </span>
@@ -112,9 +134,9 @@ export default function WhatWeOffer() {
                 ))}
               </ul>
             </div>
-          );
+          )
         })}
       </div>
     </section>
-  );
+  )
 }

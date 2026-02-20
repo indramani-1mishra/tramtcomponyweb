@@ -7,20 +7,20 @@ export const contactData = [
   {
     icon: <FaRupeeSign className="text-white text-[11px] flex-shrink-0" />,
     label: "Call For Sales :",
-    link: "tel:+918527949808",
-    display: "+91-8527949808",
+    link: "tel:+919211986515",
+    display: "+91-9211986515",
   },
   {
     icon: <FaHandsHelping className="text-white text-[12px] flex-shrink-0" />,
     label: "For Support :",
-    link: "tel:+918527949808",
-    display: "+91-8527949808",
+    link: "tel:+919211986515",
+    display: "+91-9211986515",
   },
   {
     icon: <MdMail className="text-white text-[13px] flex-shrink-0" />,
     label: "Mail :",
-    link: "mailto:support@tramt.in",
-    display: "support@tramt.in",
+    link: "mailto:Info@prxindia.com",
+    display: "Info@prxindia.com",
   },
 ];
 

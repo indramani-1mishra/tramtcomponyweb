@@ -30,11 +30,11 @@ export default function Upperheader() {
 
         {/* ── Action Buttons ── */}
         <div className="flex items-center gap-1 px-2 sm:px-3 border-r border-[#3a3a3a] whitespace-nowrap">
-          <button className="flex items-center gap-1 bg-green-500 hover:bg-green-600 active:bg-green-700 text-white text-[11px] font-semibold px-2 sm:px-3 py-[3px] rounded transition-colors duration-200 cursor-pointer">
+          <button className="flex items-center gap-1 bg-blue-900 hover:bg-blue-500 active:bg-green-700 text-white text-[11px] font-semibold px-2 sm:px-3 py-[3px] rounded transition-colors duration-200 cursor-pointer">
             <FaRupeeSign className="text-[10px]" />
             Pay Online
           </button>
-          <button className="bg-red-500 hover:bg-red-600 active:bg-red-700 text-white text-[11px] font-semibold px-2 sm:px-3 py-[3px] rounded transition-colors duration-200 cursor-pointer">
+          <button className="bg-orange-400 hover:bg-gold-600 active:bg-red-700 text-white text-[11px] font-semibold px-2 sm:px-3 py-[3px] rounded transition-colors duration-200 cursor-pointer">
             Downloads
           </button>
         </div>
