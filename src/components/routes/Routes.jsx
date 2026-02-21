@@ -23,6 +23,8 @@ import PoliticalPublicImagePR from '../pages/PoliticalPublicImagePR/PoliticalPub
 import AwardNominationRecognitionPR from '../pages/AwardNominationRecognitionPR/AwardNominationRecognitionPR'
 import InvestorFundingAnnouncementPR from '../pages/InvestorFundingAnnouncement PR/InvestorFundingAnnouncementPR'
 import IntegratedPRDigitalVisibilityPackage from '../pages/IntegratedPR&DigitalVisibilityPackage/IntegratedPRDigitalVisibilityPackage'
+import ContectusPage from '../pages/contectuspage/ContectusPage'
+import ContactButtons from '../reuseblecomponent/Buttons/Button'
 
 export default function Router() {
   return (
@@ -50,11 +52,12 @@ export default function Router() {
         <Route path='/InvestorFundingAnnouncementPR' element={<InvestorFundingAnnouncementPR/>}/>
         <Route path='/IntegratedPRDigitalVisibilityPackage' element={<IntegratedPRDigitalVisibilityPackage/>}/>
         <Route path='/InfluencerMediaOutreach' element={<InfluencerMediaOutreach/>}/>
-        
+        <Route path="/contact" element={<ContectusPage/>}/>
       
        
       </Routes>
       <Footer/>
+      <ContactButtons/>
     </>
   )
 }

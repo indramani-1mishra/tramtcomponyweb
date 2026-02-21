@@ -114,14 +114,14 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2 text-gray-400 text-[14px]">
               <MdPhone className="text-[16px] flex-shrink-0 text-gray-300" />
-              <a href="tel:+918527949808" className="hover:text-white transition-colors">
-                +91-8527949808
+              <a href="tel:+919211986515" className="hover:text-white transition-colors">
+                +91-9211986515
               </a>
             </li>
             <li className="flex items-center gap-2 text-gray-400 text-[14px]">
               <MdMail className="text-[16px] flex-shrink-0 text-gray-300" />
-              <a href="mailto:support@tramt.in" className="hover:text-white transition-colors">
-                support@tramt.in
+              <a href="mailto:Info@prxindia.com" className="hover:text-white transition-colors">
+               Info@prxindia.com
               </a>
             </li>
           </ul>
@@ -152,7 +152,7 @@ export default function Footer() {
         style={{ borderTop: '1px solid #333' }}
       >
         <p className="text-gray-500 text-[13px]">
-          © 2026 Tramt Technology Pvt Ltd. All rights reserved.
+          © 2026 PRX INDIA. All rights reserved.
         </p>
       </div>
 

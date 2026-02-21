@@ -1,27 +1,34 @@
 import React, { useState } from "react";
+import useSendenquery from "../../customhooks/useSendenquery";
 
 const BLUE = "#1e4d8c";
 const GOLD = "#f5a623";
 
 export default function Quickenquer({ isopen, setIsopen }) {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ fullname: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
-
+  const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+  const sendenquery = useSendenquery(form, setLoading);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Enquiry submitted:", form);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const success = await sendenquery();
+  console.log(success);
+
+  if (success) {
     setSubmitted(true);
+
     setTimeout(() => {
       setSubmitted(false);
-      setForm({ name: "", email: "", phone: "", message: "" });
+      setForm({ fullname: "", email: "", phone: "", message: "" });
       setIsopen(false);
     }, 2000);
-  };
-
+  }
+};
   const handleClose = () => setIsopen(false);
 
   if (!isopen) return null;
@@ -70,12 +77,11 @@ export default function Quickenquer({ isopen, setIsopen }) {
             ✕
           </button>
         </div>
-
-        {/* ── Body ── */}
+ 
         <div className="bg-white px-6 py-5">
           {submitted ? (
             <div className="text-center py-8">
-              <div className="text-[48px] mb-3">✅</div>
+              <div className="text-[48px] mb-3"></div>
               <p className="font-bold text-[16px]" style={{ color: BLUE }}>
                 Enquiry Submitted!
               </p>
@@ -84,7 +90,7 @@ export default function Quickenquer({ isopen, setIsopen }) {
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               {[
-                { label: "Full Name *", name: "name", type: "text", placeholder: "your naam", required: true },
+               { label: "Full Name *", name: "fullname", type: "text", placeholder: "your name", required: true },
                 { label: "Email *", name: "email", type: "email", placeholder: "email@example.com", required: true },
                 { label: "Phone Number", name: "phone", type: "tel", placeholder: "+91 9XXXXXXXXX", required: false },
               ].map((field) => (
@@ -141,6 +147,7 @@ export default function Quickenquer({ isopen, setIsopen }) {
                 {/* Submit Button */}
                 <button
                   type="submit"
+                  disabled={loading}
                   className="flex-1 py-3 rounded-lg font-bold text-white text-[14px] uppercase tracking-wider transition-all duration-200"
                   style={{ backgroundColor: GOLD }}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#d48a0e")}

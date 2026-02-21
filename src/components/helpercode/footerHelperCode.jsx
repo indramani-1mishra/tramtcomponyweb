@@ -5,24 +5,27 @@ import { IoLogoLinkedin, IoLogoYoutube }  from "react-icons/io";
 
 export const aboutLinks = [
   { label: 'About', url: '/about' },
-  { label: 'Testinomial', url: '/testimonial' },
+  { label: 'Testinomial', url: '/' },
   { label: 'Terms of Services', url: '/terms' },
   { label: 'Blog', url: '/blog' },
 ];
 
 export const serviceLinks = [
-  { label: 'Performance Marketing', url: '/services/performance-marketing' },
-  { label: 'Dedicated Marketing', url: '/services/dedicated-marketing' },
-  { label: 'Social Media Management', url: '/services/social-media' },
-  { label: 'PR Agency', url: '/services/pr-agency' },
+     {label: "Event PR & Media Coverage",         url: "/EventPRMediaCoverage" },
+      {label: "Award Nomination & Recognition PR", url: "/AwardNominationRecognitionPR" },
+      { label: "Political & Public Image PR",       url: "/PoliticalPublicImagePR" },
+      { label: "Integrated PR & Digital Visibility Package", url: "/IntegratedPRDigitalVisibilityPackage" },
+      { label: "CEO & Founder Profiling",                    url: "/CEOFounderProfiling" },
+    
 ];
 
 export const importantLinks = [
-  { label: 'Downloads', url: '/downloads' },
-  { label: 'Pay Online', url: '/pay-online' },
-  { label: 'Terms & Conditions', url: '/terms' },
-  { label: 'Privacy Policy', url: '/privacy-policy' },
-  { label: 'Cancellation & Refund Policy', url: '/refund-policy' },
+   
+         { label: "Media Relations Management",           url: "/mediarelation" },
+          { label: "Press Release Writing & Distribution", url: "/pressreleasepage" },
+          { label: "Digital PR Campaigns",                 url: "/digitalPR" },
+          { label: "Brand Reputation Management",          url: "/brandreputaion" },
+          { label: "Corporate Communications",             url: "/CorporateCommunications" },
 ];
 
  export const socialIcons = [
