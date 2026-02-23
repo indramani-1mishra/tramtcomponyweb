@@ -23,13 +23,12 @@ export const contactData = [
     display: "Info@prxindia.com",
   },
 ];
-
+ 
  export const socialIcons = [
-  { icon: <FaFacebook />,       link: "https://www.facebook.com/people/TRAMT-Technology-Private-Limited/61557681006004/?mibextid=LQQJ4d",  key: "fb", bg: "#1877f2" },
-  { icon: <BsTwitter />,         link: "https://x.com/Tramttech",   key: "tw", bg: "#1da1f2" },
-  { icon: <IoLogoLinkedin />,    link: "https://www.linkedin.com/company/tramt-technology-private-limited/",  key: "li", bg: "#0077b5" },
-  { icon: <FaInstagram />,       link: "https://www.instagram.com/tramttech", key: "ig", bg: "#e1306c" },
-  { icon: <BsFillThreadsFill />, link: "https://www.threads.com/@tramttech",   key: "th", bg: "#1877f2" },
-  { icon: <FaGoogle />,          link: "https://www.google.com/search?sca_esv=7b63aca86818e80d&rlz=1C1CHBD_en-GBIN1070IN1076&sxsrf=ADLYWIL8Zt06I8ggCgITkE6CYSforYloQA:1729845392500&kgmid=/g/11vzcdllrd&q=Tramt+Technology+Pvt+Ltd&shndl=30&shem=uaasic&source=sh/x/loc/uni/m1/1&kgs=eccdfd4a375dc72e",    key: "go", bg: "#ea4335" },
-  { icon: <IoLogoYoutube />,     link: "https://www.youtube.com/@TRAMTTechnology",   key: "yt", bg: "#ff0000" },
+  { icon: <FaFacebook />,       link: "https://www.facebook.com/share/1QzMP1nYZu/",  key: "fb", bg: "#1877f2" },
+  
+ 
+  { icon: <FaInstagram />,       link: "https://www.instagram.com/prxindiagroup/", key: "ig", bg: "#e1306c" },
+  
+  { icon: <IoLogoYoutube />,     link: "https://www.youtube.com/@prxindia",   key: "yt", bg: "#ff0000" },
 ];

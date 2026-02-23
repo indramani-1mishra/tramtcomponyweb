@@ -7,7 +7,7 @@ const testimonials = [
     id: 1,
     rating: 4.5,
     review:
-      '"Tramt Technology\'s digital marketing team helped us achieve outstanding results, driving increased website traffic and lead generation. Thank you for your expertise."',
+      '"PRX India helped us with our political campaign\'s public image management. Their media coverage and crisis communication support was truly exceptional. Highly recommended!"',
     name: 'Ashok Tiwari',
     location: 'Noida, Uttar Pradesh',
   },
@@ -15,7 +15,7 @@ const testimonials = [
     id: 2,
     rating: 4.5,
     review:
-      '"We\'re thrilled with the quality of work delivered by Tramt Technology\'s design and development team. Our website looks fantastic and functions flawlessly."',
+      '"We approached PRX India for our startup PR launch and they delivered beyond expectations. From launch announcement to national media coverage, everything was handled professionally."',
     name: 'Mr. Aryan',
     location: 'Noida, Uttar Pradesh',
   },
@@ -23,7 +23,7 @@ const testimonials = [
     id: 3,
     rating: 5,
     review:
-      '"Exceptional service! The team at Tramt Technology understood our vision perfectly and delivered beyond our expectations. Highly recommended for any digital marketing needs."',
+      '"PRX India\'s award nomination and recognition PR service helped us win a prestigious industry award. Their strategic nomination positioning and documentation support was outstanding!"',
     name: 'Priya Sharma',
     location: 'Delhi, India',
   },
@@ -31,12 +31,11 @@ const testimonials = [
     id: 4,
     rating: 4.5,
     review:
-      '"Tramt\'s PR agency services transformed our brand image completely. Their strategic communication approach helped us reach a wider audience and build lasting credibility."',
+      '"Our product launch event was a huge success thanks to PRX India\'s event PR and media coverage team. Pre-event buzz creation and on-ground media management was top-notch."',
     name: 'Rahul Gupta',
     location: 'Lucknow, Uttar Pradesh',
   },
 ];
-
 
 function Stars({ rating }) {
   return (

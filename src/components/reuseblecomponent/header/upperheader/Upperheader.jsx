@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import indmart from "../../../../assets/images/indmart.png";
-import jd from "../../../../assets/images/jd.png";
+{/**import indmart from "../../../../assets/images/indmart.png";
+import jd from "../../../../assets/images/jd.png"; */}
 import { contactData, socialIcons } from '../../../helpercode/upperheaderhelpercode';
 import {FaRupeeSign} from "react-icons/fa";
 export default function Upperheader() {
@@ -55,11 +55,14 @@ export default function Upperheader() {
           ))}
         </div>
 
-        {/* ── Extra Logos (JD, Indmart) ── */}
+        {/* ── Extra Logos (JD, Indmart) ──
         <div className="flex items-center gap-1 pl-2">
           <Link to="https://www.justdial.com/Noida/Tramt-Technology-Private-Limited-Noida-Sector-59/011PXX11-XX11-240401120217-L1G6_BZDET?via=scode"><img src={jd} alt="JD" className="h-4 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity" /></Link>
           <Link to="https://www.indiamart.com/tramt-technology-private-limited/" ><img src={indmart} alt="Indmart" className="h-4 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity" /></Link>
         </div>
+        
+         */}
+        
 
       </div>
     </div>

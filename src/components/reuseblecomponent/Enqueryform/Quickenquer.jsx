@@ -1,33 +1,57 @@
 import React, { useState } from "react";
-import useSendenquery from "../../customhooks/useSendenquery";
+//import useSendenquery from "../../customhooks/useSendenquery";
+import { sendEnquiryEmail } from "../../customhooks/sendenquiry";
+import { toast } from "react-toastify";
+
 
 const BLUE = "#1e4d8c";
 const GOLD = "#f5a623";
 
+const enquiryOptions = [
+ 
+  
+  "Enquery For",
+  "Media Relations Management",
+  "Political Public Image PR",
+  "Award Nomination Recognition PR",
+  "Brand Reputation Management",
+  "Personal Branding PR",
+  "Influencer & Media Outreach",
+]
+
 export default function Quickenquer({ isopen, setIsopen }) {
-  const [form, setForm] = useState({ fullname: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ fullname: "", email: "", phone: "", message: "",enqueryfor: enquiryOptions[0],});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  const sendenquery = useSendenquery(form, setLoading);
+  //const sendenquery = useSendenquery(form, setLoading);
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+  setLoading(true);
 
-  const success = await sendenquery();
-  console.log(success);
-
+  const success = await sendEnquiryEmail(form); 
+  
   if (success) {
+    toast.success("Enquiry Sent Successfully");
     setSubmitted(true);
 
     setTimeout(() => {
       setSubmitted(false);
-      setForm({ fullname: "", email: "", phone: "", message: "" });
+      setForm({
+        fullname: "",
+        email: "",
+        phone: "",
+        message: "",
+        enqueryfor: enquiryOptions[0],
+      });
       setIsopen(false);
     }, 2000);
   }
+
+  setLoading(false); // ✅ always stop loader
 };
   const handleClose = () => setIsopen(false);
 
@@ -112,6 +136,24 @@ const handleSubmit = async (e) => {
                   />
                 </div>
               ))}
+              <div>
+                <label className="block text-[12px] font-semibold mb-1" style={{ color: BLUE }}>
+                  Enquiry For
+                </label>
+                <select
+                  name="enqueryfor"
+                  value={form.enqueryfor}
+                  onChange={handleChange}
+                 className="w-full border rounded-lg px-4 py-[10px] text-[14px] outline-none transition-all resize-none"
+                  style={{ borderColor: "#ddd" }}
+                  onFocus={(e) => (e.target.style.borderColor = BLUE)}
+                  onBlur={(e) => (e.target.style.borderColor = "#ddd")}
+                  >
+                 {enquiryOptions.map((option)=>{
+                  return <option key={option} value={option}>{option}</option>
+                 })}
+                </select>
+              </div>
 
               <div>
                 <label className="block text-[12px] font-semibold mb-1" style={{ color: BLUE }}>

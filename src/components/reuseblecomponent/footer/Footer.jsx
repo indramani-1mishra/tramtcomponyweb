@@ -110,7 +110,7 @@ export default function Footer() {
           <ul className="flex flex-col gap-3">
             <li className="flex items-start gap-2 text-gray-400 text-[14px]">
               <MdLocationOn className="text-[18px] flex-shrink-0 mt-[2px] text-gray-300" />
-              <span>GF-006,A-1 sector 59 Noida,UP</span>
+              <span>JC2M +C5M Greater Noida, Uttar Pradesh</span>
             </li>
             <li className="flex items-center gap-2 text-gray-400 text-[14px]">
               <MdPhone className="text-[16px] flex-shrink-0 text-gray-300" />

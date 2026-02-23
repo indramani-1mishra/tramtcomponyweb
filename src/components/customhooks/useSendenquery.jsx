@@ -1,4 +1,5 @@
-import axios from "axios";
+{/**
+  import axios from "axios";
 import { toast } from "react-toastify";
 
 export default function useSendenquery(data, setLoading) {
@@ -8,7 +9,7 @@ export default function useSendenquery(data, setLoading) {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:3001/api/v1/sendnquery", // ✅ correct route
+        "https://prxindiabackend.onrender.com/api/v1/sendnquery", // ✅ correct route
         data
       );
 
@@ -33,4 +34,4 @@ export default function useSendenquery(data, setLoading) {
   };
 
   return sendenquery;
-}
+} */}

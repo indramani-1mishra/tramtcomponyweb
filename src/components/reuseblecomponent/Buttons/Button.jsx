@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const YOUR_PHONE_NUMBER = "7236005136"; 
+const YOUR_PHONE_NUMBER = "9211986515"; 
 const WHATSAPP_MESSAGE = "Hello I am come from PRX India I want to inquiry";
 
 export default function ContactButtons() {

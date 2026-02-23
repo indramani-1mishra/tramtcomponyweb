@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
-import useSendenquery from '../../customhooks/useSendenquery'
+import { sendEnquiryEmail } from '../../customhooks/sendenquiry'
+import { toast } from 'react-toastify'
+
 
 const enquiryOptions = [
-  "Performance Marketing",
-  "Core PR Services",
-  "Premium / Advanced Services",
+ 
+  
+  "Enquery For",
   "Media Relations Management",
-  "Press Release Writing & Distribution",
-  "Digital PR Campaigns",
+  "Political Public Image PR",
+  "Award Nomination Recognition PR",
   "Brand Reputation Management",
-  "Corporate Communications",
-  "Online Reputation Management (ORM)",
-  "Startup PR Launch Packages",
-  "Crisis Communication Management",
   "Personal Branding PR",
   "Influencer & Media Outreach",
 ]
@@ -25,21 +23,39 @@ export default function EnqueryForm() {
     fullname: '',
     phone: '',
     email: '',
+   enqueryfor: enquiryOptions[0],
     message: ''
   })
 
-  const sendenquery = useSendenquery(form, setLoading)
+ 
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-     await sendenquery();
-    setForm({fullname:"",email:"",message:"",phone:""});
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
 
+  try {
+    await sendEnquiryEmail(form);
+
+    toast.success("Enquiry Sent Successfully");
+
+    setForm({
+      fullname: "",
+      phone: "",
+      email: "",
+      enqueryfor: enquiryOptions[0],
+      message: "",
+    });
+  } catch (error) {
+    console.error(error);
+    alert("Failed to send enquiry ❌");
+  } finally {
+    setLoading(false);
   }
+};
 
   return (
     <>
@@ -85,7 +101,20 @@ export default function EnqueryForm() {
                 style={inputStyle}
               />
             </FormField>
-
+               <FormField label="Enquiry For">
+              <select
+                name="enqueryfor"
+                value={form.enqueryfor}
+                onChange={handleChange}
+                style={{ ...inputStyle, cursor: 'pointer' }}
+                onFocus={e => e.target.style.borderColor = '#1e4d8c'}
+                onBlur={e => e.target.style.borderColor = '#d0d0d0'}
+              >
+                {enquiryOptions.map(opt => (
+                  <option key={opt} value={opt}>{opt}</option>
+                ))}
+              </select>
+            </FormField>
             <FormField label="Message">
               <textarea
                 name="message"
